@@ -1,3 +1,5 @@
+github.com/Kelwing/mc-rcon v0.0.0-20191221214055-1f327b337f77 h1:4iotpbMl1dl6h/htbqKCnYQFCIxyV7F1ce+anGXLyCY=
+github.com/Kelwing/mc-rcon v0.0.0-20191221214055-1f327b337f77/go.mod h1:wlXY/EO9CBjMViEh95JOQhp//RMnHs4ZUBhYhx43LdM=
 github.com/Tnze/CoolQ-Golang-SDK v1.2.0 h1:0vnuZCFRd3ufSnZd/6sveqmlamIMm3Bnr8M/7veIDLE=
 github.com/Tnze/CoolQ-Golang-SDK v1.2.0/go.mod h1:e0wTTiIAcKLmr4JHTUHOo0dLzctmhNE1m3HhNHHGQLA=
 golang.org/x/text v0.3.2 h1:tW2bmiBqwgJj/UpqtC8EpXEZVYOwU0yG4iWbprSVAcs=
