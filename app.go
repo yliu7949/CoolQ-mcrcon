@@ -22,7 +22,7 @@ func init() {
 
 func onGroupMsg(subType, msgID int32, fromGroup, fromQQ int64, fromAnonymous, msg string, font int32) int32 {
 	defer handlePanic()
-	if strings.HasPrefix(msg, "[CQ:at,qq=3*********]") {	//群机器人的QQ号码
+	if strings.HasPrefix(msg, "[CQ:at,qq=3********]") && msg[22:23] == "/" {	//群机器人的QQ号
 		reply, flag := handleCmd(fromQQ, msg, true)
 		if flag {
 			cqp.SendGroupMsg(fromGroup, reply)
@@ -33,15 +33,17 @@ func onGroupMsg(subType, msgID int32, fromGroup, fromQQ int64, fromAnonymous, ms
 
 func onPrivateMsg(subType, msgID int32, fromQQ int64, msg string, font int32) int32 {
 	defer handlePanic()
-	reply, flag := handleCmd(fromQQ, msg, false)
-	if flag {
-		cqp.SendPrivateMsg(fromQQ, reply)
+	if msg[:1] == "/" {
+		reply, flag := handleCmd(fromQQ, msg, false)
+		if flag {
+			cqp.SendPrivateMsg(fromQQ, reply)
+		}
 	}
 	return 0
 }
 
 func handleCmd(fromQQ int64, msg string, flag bool) (string, bool) {
-	if fromQQ != 2******** && msg[22:27] != "/list" {	//Admin的QQ号码
+	if fromQQ != 2********* && msg[22:27] != "/list" {	//Admin的QQ号
 		return "您没有这个权限！", true
 	}
 	var command string
